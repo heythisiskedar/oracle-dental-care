@@ -1,254 +1,727 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oracle Dental Care | Dr. Ananya Shetty — Multi-Speciality Dental Clinic in Vasai West</title>
-  <meta name="description" content="4.8★ Rated Multi-Speciality Dental Clinic at Ambadi Road, Vasai West. Led by Dr. Ananya Shetty. Painless wisdom tooth extractions, dental implants, braces & smile makeovers." />
+  <title>Oracle Dental Care | Dr. Ananya Shetty — Dental Clinic in Vasai West</title>
+  <meta name="description" content="Oracle Dental Care at Bungalow No. 12, Ambadi Road, Vasai West. Consultations with Dr. Ananya Shetty for wisdom tooth extraction, dental braces, smile makeovers, and prosthodontics." />
 
-  <!-- Google Fonts: Plus Jakarta Sans (UI) & Playfair Display (Headings) -->
+  <!-- Open Graph Metadata for WhatsApp Link Previews -->
+  <meta property="og:title" content="Oracle Dental Care — Ambadi Road, Vasai West" />
+  <meta property="og:description" content="View clinic hours, patient reviews (4.8★ on Google Maps), directions, and appointment contact details for Oracle Dental Care." />
+  <meta property="og:type" content="website" />
+
+  <!-- LocalBusiness / Dentist Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Oracle Dental Care",
+    "alternateName": "ओरेकल डेंटल केयर",
+    "telephone": "+91-82650-54624",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bungalow No. 12, Dewan & Shah Housing Enclave, Ambadi Road, Off Vidya Mandir Marg, near Vasai Virar Municipal Swimming Pool",
+      "addressLocality": "Vasai West",
+      "addressRegion": "Maharashtra",
+      "postalCode": "401202",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 19.3887791,
+      "longitude": 72.823701
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "10:00",
+        "closes": "14:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "17:00",
+        "closes": "20:00"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              ivory: '#FAF9F6',
-              green: '#1B4332',
-              greenLight: '#2D6A4F',
-              gold: '#C59B27',
-              goldLight: '#F4EBD0',
-              walnut: '#5C4033',
-              plum: '#581845'
-            }
-          },
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            serif: ['"Playfair Display"', 'serif'],
-          }
-        }
+  <!-- Zero-Dependency Production Stylesheet -->
+  <style>
+    :root {
+      --bg-ivory: #FAF9F6;
+      --bg-white: #FFFFFF;
+      --brand-green: #1B4332;
+      --brand-green-light: #2D6A4F;
+      --brand-gold: #C59B27;
+      --brand-gold-soft: #FBF6E9;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --border-light: #E2E8F0;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+      --radius-md: 0.75rem;
+      --radius-lg: 1rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-ivory);
+    }
+
+    body {
+      line-height: 1.6;
+      padding-bottom: 4.5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @media (min-width: 768px) {
+      body { padding-bottom: 0; }
+    }
+
+    /* Offset anchor jumps so sticky header never covers headings */
+    section[id] {
+      scroll-margin-top: 6rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .icon {
+      width: 1.15rem;
+      height: 1.15rem;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    /* 1. Top Utility Bar */
+    .utility-bar {
+      background-color: var(--brand-green);
+      color: #FFFFFF;
+      font-size: 0.8125rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .utility-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .utility-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .utility-bar a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .utility-bar a:hover {
+      color: var(--brand-gold);
+    }
+
+    .badge-hours {
+      color: #FDE68A;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hide-mobile {
+      display: none;
+    }
+
+    @media (min-width: 900px) {
+      .hide-mobile { display: inline-flex; }
+    }
+
+    /* 2. Sticky Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-monogram {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: var(--radius-md);
+      background-color: var(--brand-green);
+      color: var(--brand-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0F172A;
+      line-height: 1.1;
+      display: block;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      display: block;
+      margin-top: 0.15rem;
+    }
+
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    .desktop-nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--brand-green);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: 0.75rem 1.35rem;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--brand-green);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--brand-green-light);
+    }
+
+    .btn-outline {
+      background-color: var(--bg-white);
+      color: #0F172A;
+      border-color: #CBD5E1;
+    }
+
+    .btn-outline:hover {
+      background-color: #F8FAFC;
+    }
+
+    .header-cta {
+      display: none;
+      padding: 0.65rem 1.1rem;
+      font-size: 0.875rem;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: 1px solid var(--border-light);
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      color: var(--text-main);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+      .desktop-nav { display: flex; }
+      .header-cta { display: inline-flex; }
+      .menu-toggle { display: none; }
+    }
+
+    .mobile-drawer {
+      display: none;
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      padding: 0.75rem 1.25rem 1.25rem;
+    }
+
+    .mobile-drawer.open {
+      display: block;
+    }
+
+    .mobile-drawer a {
+      display: block;
+      padding: 0.7rem 0;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    /* 3. Hero Section */
+    .hero {
+      padding: 2.5rem 0 4rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero { padding: 4.5rem 0 5.5rem; }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.75rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 7fr 5fr;
+        gap: 3.5rem;
       }
     }
-  </script>
 
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+    .rating-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8125rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.25rem;
+    }
+
+    .stars {
+      color: #F59E0B;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.15rem, 4vw, 3.35rem);
+      color: #0F172A;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 em {
+      color: var(--brand-green);
+      font-style: italic;
+    }
+
+    .hero-lead {
+      font-size: 1.0625rem;
+      color: var(--text-muted);
+      max-width: 60ch;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 540px) {
+      .hero-ctas {
+        flex-direction: row;
+      }
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 640px) {
+      .trust-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Visual Column & Unclipped Review Card */
+    .visual-card {
+      background-color: var(--bg-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-md);
+    }
+
+    .image-wrapper {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      background-color: #E2E8F0;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .placeholder-tag {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      background-color: rgba(15, 23, 42, 0.82);
+      color: #F8FAFC;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.3rem 0.65rem;
+      border-radius: 0.375rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .quote-box {
+      padding: 1.25rem;
+      background-color: var(--bg-white);
+    }
+
+    .quote-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .reviewer-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .avatar {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background-color: #D1FAE5;
+      color: var(--brand-green);
+      font-weight: 700;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .reviewer-name {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .review-source {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .quote-text {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* Sticky Mobile Bar */
+    .mobile-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background-color: var(--bg-white);
+      border-top: 1px solid var(--border-light);
+      padding: 0.6rem 0.75rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      box-shadow: 0 -4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    @media (min-width: 768px) {
+      .mobile-bottom-bar { display: none; }
+    }
+  </style>
 </head>
 
-<body class="bg-brand-ivory text-slate-800 font-sans antialiased selection:bg-brand-green selection:text-white pb-16 md:pb-0">
+<body>
 
   <!-- 1. TOP UTILITY BAR -->
-  <div class="bg-brand-green text-white text-xs sm:text-sm py-2.5 px-4 border-b border-white/10">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-      <div class="flex items-center gap-4 flex-wrap justify-center">
-        <span class="inline-flex items-center gap-1.5 text-amber-300 font-medium">
-          <i data-lucide="clock" class="w-4 h-4"></i>
-          Mon–Sat: 10:00 AM – 2:30 PM &amp; 5:00 PM – 8:00 PM
+  <div class="utility-bar">
+    <div class="container utility-inner">
+      <div class="utility-group">
+        <span class="badge-hours">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Mon–Sat: 10:00 AM – 2:30 PM &amp; 5:00 PM – 8:00 PM (Sun Closed)
         </span>
-        <span class="hidden md:inline text-white/30">|</span>
-        <span class="hidden lg:inline-flex items-center gap-1.5 text-emerald-100">
-          <i data-lucide="map-pin" class="w-4 h-4 text-brand-gold"></i>
-          Bungalow No. 12, Ambadi Road, Near VVMC Swimming Pool, Vasai West
+        <span class="hide-mobile" style="color: #D1FAE5;">
+          • Bungalow No. 12, Ambadi Road, Near VVMC Swimming Pool, Vasai West
         </span>
       </div>
-      <div class="flex items-center gap-4">
-        <a href="tel:+918265054624" class="hover:text-brand-gold transition inline-flex items-center gap-1 font-medium">
-          <i data-lucide="phone" class="w-3.5 h-3.5"></i> 082650 54624
+      <div class="utility-group">
+        <a href="tel:+918265054624">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          082650 54624
         </a>
-        <span class="text-white/30">/</span>
-        <a href="tel:+919359226569" class="hover:text-brand-gold transition font-medium">
-          93592 26569
-        </a>
+        <span style="opacity: 0.4;">/</span>
+        <a href="tel:+919359226569">93592 26569</a>
       </div>
     </div>
   </div>
 
   <!-- 2. STICKY NAVIGATION HEADER -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
-      <!-- Brand Identity -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-brand-green flex items-center justify-center text-brand-gold font-serif font-bold text-2xl shadow-sm group-hover:bg-brand-greenLight transition">
-          O
-        </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand-logo">
+        <div class="brand-monogram serif" aria-hidden="true">O</div>
         <div>
-          <span class="block font-serif font-bold text-xl sm:text-2xl text-slate-900 tracking-tight leading-none">
-            Oracle Dental Care
-          </span>
-          <span class="block text-xs text-slate-500 font-medium mt-1">
-            ओरेकल डेंटल केयर • Vasai West
-          </span>
+          <span class="brand-title serif">Oracle Dental Care</span>
+          <span class="brand-subtitle">ओरेकल डेंटल केयर • Vasai West</span>
         </div>
       </a>
 
-      <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
-        <a href="#services" class="hover:text-brand-green transition">Treatments</a>
-        <a href="#doctor" class="hover:text-brand-green transition">Dr. Ananya Shetty</a>
-        <a href="#clinic" class="hover:text-brand-green transition">Our Clinic</a>
-        <a href="#reviews" class="hover:text-brand-green transition">Patient Stories (4.8★)</a>
-        <a href="#location" class="hover:text-brand-green transition">Location</a>
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#services">Treatments</a>
+        <a href="#doctor">Dr. Ananya Shetty</a>
+        <a href="#reviews">Patient Reviews (4.8★)</a>
+        <a href="#location">Location &amp; Hours</a>
       </nav>
 
-      <!-- Desktop CTA & Mobile Menu Toggle -->
-      <div class="flex items-center gap-3">
-        <a href="https://wa.me/918265054624?text=Hello%20Oracle%20Dental%20Care%2C%20I%20would%20like%20to%20book%20a%20dental%20consultation%20with%20Dr.%20Ananya%20Shetty." 
-           target="_blank" rel="noopener"
-           class="hidden sm:inline-flex items-center gap-2 bg-brand-green hover:bg-brand-greenLight text-white font-semibold text-sm px-5 py-3 rounded-xl shadow-sm transition transform active:scale-95">
-          <i data-lucide="calendar-check" class="w-4 h-4 text-brand-gold"></i>
-          Book Appointment
+      <div class="header-actions">
+        <a href="#location" class="btn btn-primary header-cta">
+          <svg class="icon" style="color: var(--brand-gold);" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Request Appointment
         </a>
 
-        <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-lg text-slate-700 hover:bg-slate-100">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+        <button id="mobile-menu-btn" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle Navigation Menu">
+          <svg id="icon-menu" class="icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg id="icon-close" class="icon" style="display: none;" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-3">
-      <a href="#services" class="block py-2 text-base font-medium text-slate-800 border-b border-slate-100">Treatments &amp; Services</a>
-      <a href="#doctor" class="block py-2 text-base font-medium text-slate-800 border-b border-slate-100">Meet Dr. Ananya Shetty</a>
-      <a href="#clinic" class="block py-2 text-base font-medium text-slate-800 border-b border-slate-100">Clinic Tour &amp; Hygiene</a>
-      <a href="#reviews" class="block py-2 text-base font-medium text-slate-800 border-b border-slate-100">84+ Google Reviews (4.8★)</a>
-      <a href="#location" class="block py-2 text-base font-medium text-slate-800">Directions &amp; Contact</a>
-    </div>
+    <nav id="mobile-menu" class="mobile-drawer" aria-label="Mobile Navigation">
+      <a href="#services" class="mobile-nav-link">Treatments &amp; Consultations</a>
+      <a href="#doctor" class="mobile-nav-link">Dr. Ananya Shetty</a>
+      <a href="#reviews" class="mobile-nav-link">Google Reviews (4.8★)</a>
+      <a href="#location" class="mobile-nav-link">Address, Hours &amp; Contact</a>
+    </nav>
   </header>
 
   <!-- 3. HERO SECTION -->
-  <section class="relative overflow-hidden pt-10 pb-16 md:py-20 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Column: Copy & Conversion Triggers -->
-        <div class="lg:col-span-7 space-y-6">
-          
-          <!-- Live Google Rating Pill -->
-          <div class="inline-flex items-center gap-2.5 bg-white border border-slate-200/90 rounded-full px-4 py-1.5 shadow-sm">
-            <div class="flex items-center text-amber-400">
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-            </div>
-            <span class="text-xs sm:text-sm font-bold text-slate-800">4.8 / 5.0</span>
-            <span class="text-xs sm:text-sm text-slate-500">• 84+ Verified Reviews in Vasai West</span>
-          </div>
-
-          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.15]">
-            Gentle, Pain-Free Dentistry Where <span class="text-brand-green italic">Every Question</span> Is Answered.
-          </h1>
-
-          <p class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
-            Led by <strong class="text-slate-900 font-semibold">Dr. Ananya Shetty</strong> and our specialist prosthodontic team at Ambadi Road. From painless wisdom tooth extractions to complete smile makeovers—experience unhurried consultations and personal post-treatment follow-ups.
-          </p>
-
-          <!-- Primary & Secondary Hero CTAs -->
-          <div class="flex flex-col sm:flex-row gap-4 pt-2">
-            <a href="#book" class="inline-flex items-center justify-center gap-2.5 bg-brand-green hover:bg-brand-greenLight text-white font-semibold px-7 py-4 rounded-xl shadow-md transition text-base">
-              <i data-lucide="message-circle" class="w-5 h-5 text-brand-gold"></i>
-              Schedule via WhatsApp
-            </a>
-            <a href="tel:+918265054624" class="inline-flex items-center justify-center gap-2.5 bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-semibold px-7 py-4 rounded-xl shadow-sm transition text-base">
-              <i data-lucide="phone-call" class="w-5 h-5 text-brand-green"></i>
-              Call 082650 54624
-            </a>
-          </div>
-
-          <!-- Key Trust Micro-Badges -->
-          <div class="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-slate-200/80 text-xs sm:text-sm text-slate-600 font-medium">
-            <div class="flex items-center gap-2">
-              <i data-lucide="shield-check" class="w-5 h-5 text-brand-green shrink-0"></i>
-              <span>Painless Extractions &amp; Post-Op Care</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <i data-lucide="accessibility" class="w-5 h-5 text-brand-green shrink-0"></i>
-              <span>100% Wheelchair Accessible</span>
-            </div>
-            <div class="flex items-center gap-2 col-span-2 sm:col-span-1">
-              <i data-lucide="award" class="w-5 h-5 text-brand-gold shrink-0"></i>
-              <span>In-House Diagnostics &amp; Prosthodontist</span>
-            </div>
-          </div>
-
+  <section class="hero">
+    <div class="container hero-grid">
+      
+      <!-- Left Column: Factual Clinic Intro -->
+      <div>
+        <div class="rating-pill" role="region" aria-label="Rated 4.8 out of 5 stars across 84 Google Maps reviews">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <strong style="color: #0F172A;">4.8 / 5.0</strong>
+          <span style="color: var(--text-muted);">• 84 Google Maps Reviews</span>
         </div>
 
-        <!-- Right Column: Visual Showcase & Floating Review Card -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-100 aspect-[4/5]">
-            <img 
-              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85" 
-              alt="Modern Dental Operatory at Oracle Dental Care Vasai West" 
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent"></div>
+        <h1 class="serif">
+          Patient-Focused Dental Care with <em>Clear Explanations</em> at Every Step.
+        </h1>
 
-            <!-- Bottom Overlay Info inside Image -->
-            <div class="absolute bottom-5 left-5 right-5 text-white">
-              <span class="inline-block bg-brand-gold text-slate-950 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded mb-2">
-                Ambadi Road, Vasai West
-              </span>
-              <p class="font-serif text-xl font-bold">Bungalow No. 12, Dewan &amp; Shah Enclave</p>
-              <p class="text-xs text-slate-200 mt-0.5">Co-located with Oracle Imaging &amp; Diagnostic Centre</p>
-            </div>
-          </div>
+        <p class="hero-lead">
+          Located at Dewan &amp; Shah Enclave on Ambadi Road, Vasai West. Consult with <strong style="color: #0F172A;">Dr. Ananya Shetty</strong> for wisdom tooth extractions, dental braces, smile makeovers, and prosthodontic treatments—supported by attentive post-procedure follow-ups.
+        </p>
 
-          <!-- Floating Verified Patient Quote -->
-          <div class="hidden sm:block absolute -bottom-6 -left-8 bg-white p-4 rounded-xl shadow-xl border border-slate-100 max-w-xs">
-            <div class="flex items-center gap-2 mb-1.5">
-              <div class="w-7 h-7 rounded-full bg-emerald-100 text-brand-green font-bold text-xs flex items-center justify-center">
-                VS
-              </div>
-              <div>
-                <p class="text-xs font-bold text-slate-900 leading-none">Vivek Shetty</p>
-                <p class="text-[11px] text-amber-500 font-semibold">★★★★★ Verified Patient</p>
-              </div>
-            </div>
-            <p class="text-xs text-slate-600 italic leading-relaxed">
-              "The best part was the follow-up—the staff and Dr. Ananya actually kept in touch to see how I was doing without rushing me."
-            </p>
-          </div>
+        <div class="hero-ctas">
+          <a href="#location" class="btn btn-primary">
+            <svg class="icon" style="color: var(--brand-gold);" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Schedule an Appointment
+          </a>
+          <a href="tel:+918265054624" class="btn btn-outline">
+            <svg class="icon" style="color: var(--brand-green);" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call 082650 54624
+          </a>
         </div>
 
+        <div class="trust-strip">
+          <div class="trust-item">
+            <svg class="icon" style="color: var(--brand-green);" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Thorough Consultations &amp; Follow-Up</span>
+          </div>
+          <div class="trust-item">
+            <svg class="icon" style="color: var(--brand-green);" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <span>Wheelchair Accessible Facility</span>
+          </div>
+          <div class="trust-item">
+            <svg class="icon" style="color: var(--brand-gold);" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Near VVMC Swimming Pool, Vasai West</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Right Column: Honest Placeholder Image + Exact Verbatim Patient Quote -->
+      <div class="visual-card">
+        <div class="image-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80" 
+            alt="Representative dental clinic illustration (placeholder for actual clinic photography)"
+            loading="eager"
+          />
+          <span class="placeholder-tag">Demo Placeholder Image — Replace with clinic photography</span>
+        </div>
+
+        <div class="quote-box">
+          <div class="quote-header">
+            <div class="reviewer-meta">
+              <div class="avatar" aria-hidden="true">VS</div>
+              <div>
+                <div class="reviewer-name">Vivek Shetty</div>
+                <div class="review-source">Google Maps Review</div>
+              </div>
+            </div>
+            <span class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <p class="quote-text">
+            "I just had my wisdom tooth pulled at Dr. Ananya’s clinic and I’m so glad I went there. She was very professional and easy to talk to. The best part was the follow-up—the staff and the doctor actually kept in touch to see how I was doing and took the time to answer all my questions without rushing me."
+          </p>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- [STEP 2 INSERTION POINT: TREATMENTS, DOCTOR PROFILE & CLINIC GALLERY] -->
+  <!-- [STEP 2 INSERTION POINT: TREATMENTS, DOCTOR & DIAGNOSTIC WING] -->
 
-  <!-- [STEP 3 INSERTION POINT: PATIENT REVIEWS, WHATSAPP BOOKING & FOOTER] -->
+  <!-- [STEP 3 INSERTION POINT: REVIEWS, LOCATION, APPOINTMENT CONTACT & FOOTER] -->
 
-  <!-- 4. STICKY MOBILE BOTTOM BAR (Conversion Booster for Mobile Visitors) -->
-  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-slate-200 px-3 py-2.5 grid grid-cols-2 gap-2.5 shadow-lg">
-    <a href="tel:+918265054624" class="flex items-center justify-center gap-2 bg-slate-100 text-slate-900 font-semibold text-sm py-3 rounded-lg border border-slate-300">
-      <i data-lucide="phone" class="w-4 h-4 text-brand-green"></i>
+  <!-- 4. STICKY MOBILE BOTTOM BAR -->
+  <div class="mobile-bottom-bar">
+    <a href="tel:+918265054624" class="btn btn-outline" style="padding: 0.65rem;">
+      <svg class="icon" style="color: var(--brand-green);" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       Call Clinic
     </a>
-    <a href="https://wa.me/918265054624?text=Hello%20Oracle%20Dental%20Care%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="flex items-center justify-center gap-2 bg-brand-green text-white font-semibold text-sm py-3 rounded-lg shadow-sm">
-      <i data-lucide="message-circle" class="w-4 h-4 text-brand-gold"></i>
-      WhatsApp Book
+    <a href="#location" class="btn btn-primary" style="padding: 0.65rem;">
+      <svg class="icon" style="color: var(--brand-gold);" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Book Visit
     </a>
   </div>
 
-  <!-- Base Scripts -->
+  <!-- Minimal Accessible Navigation Script -->
   <script>
-    lucide.createIcons();
+    (function () {
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      const iconMenu = document.getElementById('icon-menu');
+      const iconClose = document.getElementById('icon-close');
+      const links = document.querySelectorAll('.mobile-nav-link');
 
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileBtn && mobileMenu) {
-      mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
+      function setMenuState(isOpen) {
+        menu.classList.toggle('open', isOpen);
+        btn.setAttribute('aria-expanded', String(isOpen));
+        iconMenu.style.display = isOpen ? 'none' : 'block';
+        iconClose.style.display = isOpen ? 'block' : 'none';
+      }
+
+      if (btn && menu) {
+        btn.addEventListener('click', function () {
+          const isOpen = menu.classList.contains('open');
+          setMenuState(!isOpen);
+        });
+
+        links.forEach(function (link) {
+          link.addEventListener('click', function () {
+            setMenuState(false);
+          });
+        });
+      }
+    })();
   </script>
 </body>
 </html>
